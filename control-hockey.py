@@ -37,8 +37,8 @@ if uploaded_file is not None and mes:
             output = BytesIO()
             no_cobrados_df = pd.DataFrame({'Número de socia no cobrados': no_pagaron_ids})
             historial_df = pd.DataFrame({
-                'Concepto': ["Mes", "Total a cobrar", "Total efectivas", "Total no cobrado", "Total cobrado más de una vez"],
-                'Valor': [mes, total_cobrar, total_efectivas, len(no_pagaron_ids), len(repetidos)]
+                'Concepto': ["Total a cobrar", "Total efectivas", "Total no cobrado", "Total cobrado más de una vez"],
+                'Valor': [total_cobrar, total_efectivas, len(no_pagaron_ids), len(repetidos)]
             })
             
             with pd.ExcelWriter(output, engine='openpyxl') as writer:
