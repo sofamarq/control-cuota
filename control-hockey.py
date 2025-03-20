@@ -20,13 +20,13 @@ if uploaded_file is not None:
 
             st.write(f"Total a cobrar: {total_cobrar}")
             st.write(f"Total efectivas: {total_efectivas}")
-            st.write(f"Personas que no pagaron: {len(no_pagaron_ids)}")
+            st.write(f"Total no cobrado: {len(no_pagaron_ids)}")
             st.write("Número de socia no cobrados:")
             st.write(pd.Series(no_pagaron_ids, index=range(1, len(no_pagaron_ids) + 1)))
 
-            st.write(f"Cantidad de IDs repetidos en efectivas: {len(repetidos)}")
+            st.write(f"Total cobrados más de una vez: {len(repetidos)}")
             if repetidos:
-                st.write("IDs repetidos en efectivas:")
+                st.write("Número de socia cobrado más de una vez:")
                 st.write(pd.Series(repetidos, index=range(1, len(repetidos) + 1)))
         else:
             st.error('El archivo debe tener las columnas "Cobrar" y "Efectivas".')
